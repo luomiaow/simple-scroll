@@ -1,5 +1,6 @@
 # simple-scroll
 移动端上拉加载更多<br>  
+![](https://github.com/luomiaow/simple-scroll/raw/master/img/demo.gif) <br>
 1.原生js，支持vue，不依赖第三方库。<br>
 2.兼容android、ios<br>
 #### 快速开始
