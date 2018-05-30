@@ -48,7 +48,7 @@ function getDataCallback() {
     htmlEmpty：结果为空布局默认值'<img src="./img/totop.png" alt="">'
     htmlToTop：回到顶部布局默认值'<p class="upwrap-empty"><img class="empty-icon" src="./img/empty.png"/><p class="empty-text">没找到相关数据~</p></p>',
     onScroll：滚动条位置监听type:function,
-    bounce:是否禁止ios bounce(默认值true-DIV滚动时可解决iOS的微信,QQ,Safari等浏览器, 列表顶部下拉和底部上拉露出浏览器灰色背景, 卡顿2秒问题)
+    bounce:是否禁止ios bounce(默认值true;DIV滚动时可解决iOS的微信,QQ,Safari等浏览器, 列表顶部下拉和底部上拉露出浏览器灰色背景, 卡顿2秒问题--滚动容器上必须带有class:simple-scroll,滚动容器以外的区域需要滚动也必须加上class:simple-scroll)
     topBtn:true,是否增加回到顶部按钮功能
     offset: 1000, //列表滚动多少距离才显示回到顶部按钮,默认1000
 ```  
