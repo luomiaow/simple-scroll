@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>body滚动</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        .item {
+            width: 100%;
+            height: 50px;
+            border-bottom: 1px solid #333;
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="simpleScroll.css">
+</head>
+<body>
+<div class="simple-scroll" id="scrollWrap">
+    <div id="content">
+
+    </div>
+</div>
+<script src="simpleScroll.js"></script>
+<script>
+    var simpleScrill = new SimpleScroll("scrollWrap", {
+        callback: getDataCallback,//上拉回调
+    });
+
+    function getDataCallback() {
+        setTimeout(function () {
+            var html = '';
+            for (var i = 0; i < 20; i++) {
+                html += '<div class="item">' + i + '</div>'
+            }
+            var content = document.getElementById('content');
+            var random = Math.random();
+            if (random < 0.3&&!content.innerHTML) {
+                simpleScrill.controlState('empty')//显示加载结果为空
+            } else if (random > 0.3 && random < 0.6) {
+                content.innerHTML += html;
+                simpleScrill.controlState('complete')//显示加载结束--End--
+            } else {
+                content.innerHTML += html;
+                simpleScrill.controlState('load')//显示加载loading
+            }
+        }, 1500)
+    }
+</script>
+</body>
+</html>
